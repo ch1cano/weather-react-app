@@ -1,0 +1,12 @@
+.search {
+  margin: 50px 50px;
+  background: url('../assets/lake-background.jpg') center no-repeat;
+  border-radius: 30px;
+  height: 85vh;
+  width: 60vw;
+}
+.search__row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

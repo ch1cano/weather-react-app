@@ -72,6 +72,8 @@ h6 {
 }
 
 .App {
+  min-height: 100vh;
+  background: rgb(92, 91, 91);
   display: flex;
   text-align: center;
 }
