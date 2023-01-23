@@ -1,0 +1,62 @@
+.container.weather-card {
+  margin-top: 50px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 80vh;
+  width: 45vw;
+  background: #fff;
+  border-radius: 30px;
+}
+.navigation {
+  margin-top: 20px;
+  text-align: end;
+}
+ul.nav-list li {
+  display: inline-block;
+  margin-right: 30px;
+}
+.title-today-card {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  margin-right: 350px;
+  margin-bottom: 20px;
+}
+.today__section {
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+}
+.today-card-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  box-shadow: 2px 2px 2px 2px #000;
+  border-radius: 10px;
+  height: 40%;
+  width: 80%;
+}
+.today-card-main {
+  margin-top: 10px;
+  position: relative;
+}
+.today-card-main::after {
+  content: ' ';
+  background: #333333;
+  width: 4px;
+  height: 170px;
+  border-radius: 10px;
+  /* линия смещена на 10px справа от текста*/
+  left: 200px;
+  top: 10px;
+  /* включаем абсолютное позиционирование относительно блока с relative */
+  position: absolute;
+}
+.today-card-secondary {
+  margin-top: 10px;
+  text-align: center;
+}
