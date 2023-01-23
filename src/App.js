@@ -1,6 +1,6 @@
 import './App.css';
 import Search from './Components/Search';
-import { WeatherCard } from './Components/WeatherCard';
+import WeatherCard from './Components/WeatherCard';
 
 function App() {
   return (

@@ -2,7 +2,26 @@ import React from 'react';
 
 import '../css/WeatherCard.css';
 
-export const WeatherCard = () => {
+const WeatherCard = () => {
+  // const APIkey =
+  //   'http://api.weatherapi.com/v1/current.json?key=de1dc24841074eda804193813232301&q=Krasnodar&aqi=no';
+
+  fetch(
+    'http://api.weatherapi.com/v1/current.json?key=de1dc24841074eda804193813232301&q=Krasnodar&aqi=no',
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+      },
+    },
+  )
+    .then((response) => response.json())
+    .then((response) => console.log(JSON.stringify(response)));
+
+  const data = {
+    localtime: '2023-01-23',
+    humidity: '86',
+  };
   return (
     <div className="container weather-card">
       <nav>
@@ -22,13 +41,13 @@ export const WeatherCard = () => {
         <div className="today-card-container">
           <div className="today-card-main">
             <div className="temperature">
-              <p>15</p>
+              <p></p>
             </div>
             <div className="weather">
               <p>Sunny</p>
             </div>
             <div className="date">
-              <p>Monday 23, January '23</p>{' '}
+              <p>Monday {data.localtime}</p>{' '}
             </div>
           </div>
           <div className="today-card-secondary">
@@ -36,7 +55,7 @@ export const WeatherCard = () => {
               <p>RealFeel 14</p>
             </div>
             <div className="">
-              <p>Humidity:66%</p>
+              <p>Humidity:{data.humidity}%</p>
             </div>
             <div className="">
               <p>UV index: 0 Low</p>{' '}
@@ -56,3 +75,5 @@ export const WeatherCard = () => {
     </div>
   );
 };
+
+export default WeatherCard;
