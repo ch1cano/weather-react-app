@@ -76,5 +76,8 @@ h6 {
 .App {
   min-height: 100vh;
   background: #bebebe;
+}
+.App-header {
   display: flex;
+  flex-direction: row;
 }
