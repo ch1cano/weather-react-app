@@ -1,27 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import '../css/WeatherCard.css';
 
 const WeatherCard = () => {
-  // const APIkey =
-  //   'http://api.weatherapi.com/v1/current.json?key=de1dc24841074eda804193813232301&q=Krasnodar&aqi=no';
+  const [temperature, setTemperature] = useState('');
+  const [condition, setCondition] = useState('');
+  const [icon, setIcon] = useState('');
+  const [time, setTime] = useState('');
+  const [realFeel, setRealFeel] = useState('');
+  const [humidity, setHumidity] = useState('');
+  const [uvIndex, setUvIndex] = useState('');
+  const [cloud, setCloud] = useState('');
+  const [visibility, setVisibility] = useState('');
 
-  fetch(
-    'http://api.weatherapi.com/v1/current.json?key=de1dc24841074eda804193813232301&q=Krasnodar&aqi=no',
-    {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
+  useEffect(() => {
+    fetch(
+      'http://api.weatherapi.com/v1/current.json?key=de1dc24841074eda804193813232301&q=Krasnodar&aqi=no',
+      {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+        },
       },
-    },
-  )
-    .then((response) => response.json())
-    .then((response) => console.log(JSON.stringify(response)));
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        console.log('RESPONSE:', response);
+        setTemperature(response.current.temp_c);
+        setCondition(response.current.condition.text);
+        setIcon(response.current.condition.icon);
+        setTime(response.location.localtime);
+        setRealFeel(response.current.feelslike_c);
+        setHumidity(response.current.humidity);
+        setUvIndex(response.current.uv);
+        setCloud(response.current.cloud);
+        setVisibility(response.current.vis_km);
+      });
+  }, []);
 
-  const data = {
-    localtime: '2023-01-23',
-    humidity: '86',
-  };
   return (
     <div className="container weather-card">
       <nav>
@@ -41,33 +57,29 @@ const WeatherCard = () => {
         <div className="today-card-container">
           <div className="today-card-main">
             <div className="temperature">
-              <p></p>
+              <p className="temperature__celcius">{temperature} °C</p>{' '}
             </div>
             <div className="weather">
-              <p>Sunny</p>
+              <p className="condition-title">{condition}</p>
+              <img src={icon} alt="condition" className="condition-icon" />
             </div>
-            <div className="date">
-              <p>Monday {data.localtime}</p>{' '}
-            </div>
+            <p className="date-title">{time}</p>
           </div>
           <div className="today-card-secondary">
             <div className="real-feel-temperature">
-              <p>RealFeel 14</p>
+              <p>RealFeel {realFeel}</p>
             </div>
             <div className="">
-              <p>Humidity:{data.humidity}%</p>
+              <p>Humidity: {humidity}%</p>
             </div>
             <div className="">
-              <p>UV index: 0 Low</p>{' '}
+              <p>UV index: {uvIndex}</p>{' '}
             </div>
             <div className="date">
-              <p>Cloud Cover: 45%</p>{' '}
+              <p>Cloud Cover: {cloud}%</p>{' '}
             </div>
             <div className="date">
-              <p>Visibility: 5 km</p>{' '}
-            </div>
-            <div className="date">
-              <p>UV index: 0 Low</p>{' '}
+              <p>Visibility: {visibility} km</p>{' '}
             </div>
           </div>
         </div>
