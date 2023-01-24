@@ -13,9 +13,16 @@ const WeatherCard = () => {
   const [cloud, setCloud] = useState('');
   const [visibility, setVisibility] = useState('');
 
+  const [apiLocation, setApiLocation] = useState('');
+  const [button, setButton] = useState(false);
+
+  const InputOnChange = (event) => {
+    setApiLocation(event.target.value);
+  };
+
   useEffect(() => {
     fetch(
-      'http://api.weatherapi.com/v1/current.json?key=de1dc24841074eda804193813232301&q=Krasnodar&aqi=no',
+      `http://api.weatherapi.com/v1/current.json?key=de1dc24841074eda804193813232301&q='${apiLocation}'&aqi=no`,
       {
         method: 'GET',
         headers: {
@@ -36,7 +43,7 @@ const WeatherCard = () => {
         setCloud(response.current.cloud);
         setVisibility(response.current.vis_km);
       });
-  }, []);
+  }, [button]);
 
   return (
     <div className="container weather-card">
@@ -51,6 +58,17 @@ const WeatherCard = () => {
           </ul>
         </div>
       </nav>
+      <div className="container-search-weather">
+        <input
+          type="text"
+          className="search-weather"
+          value={apiLocation}
+          onChange={InputOnChange}
+        />
+        <button onClick={setButton} className="search-button">
+          search
+        </button>
+      </div>
 
       <div className="today__section">
         <h1 className="title-today-card">Today</h1>
