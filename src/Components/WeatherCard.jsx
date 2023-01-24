@@ -44,6 +44,7 @@ const WeatherCard = () => {
         <div className="navigation">
           <ul className="nav-list">
             <li>Weather</li>
+
             <li>Alerts</li>
             <li>Map</li>
             <li>Satellite</li>
