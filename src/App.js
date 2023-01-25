@@ -1,14 +1,14 @@
 import './App.css';
-import Search from './Components/Search';
-import WeatherCard from './Components/WeatherCard';
+import Search from './components/Search';
+import WeatherCard from './components/WeatherCard';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="container">
+      <div className="wrapper">
         <Search />
         <WeatherCard />
-      </header>
+      </div>
     </div>
   );
 }
