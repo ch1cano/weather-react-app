@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   border: 0;
 }
+
 *,
 *:before,
 *:after {
@@ -11,23 +13,27 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 :focus,
 :active {
   outline: 0;
 }
+
 a:focus,
 a:active {
   outline: 0;
 }
+
 nav,
 footer,
 header,
 aside {
   display: block;
 }
+
 html,
 body {
-  background: #bebebe;
+  background: #878787;
   font-family: 'Montserrat', sans-serif;
   height: 100%;
   width: 100%;
@@ -38,32 +44,40 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 input,
 button,
 textarea {
   font-family: inherit;
 }
+
 input::-ms-clear {
   display: none;
 }
+
 button {
   cursor: pointer;
 }
+
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
 a,
 a:visited,
 a:hover {
   text-decoration: none;
 }
+
 ul li {
   list-style-type: none;
 }
+
 img {
   vertical-align: top;
 }
+
 h1,
 h2,
 h3,
@@ -77,6 +91,7 @@ h6 {
 .container {
   width: 100%;
 }
+
 .wrapper {
   width: 100%;
   display: flex;
