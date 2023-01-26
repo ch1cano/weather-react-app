@@ -46,7 +46,7 @@ const WeatherCard = () => {
   }, [button]);
 
   return (
-    <div className="container weather-card">
+    <div className="weather-card-container">
       <nav>
         <div className="navigation">
           <ul className="nav-list">
@@ -70,7 +70,7 @@ const WeatherCard = () => {
         </button>
       </div>
 
-      <div className="today__section">
+      <div className="today__section-container">
         <h1 className="title-today-card">Today</h1>
         <div className="today-card-container">
           <div className="today-card-main">
@@ -85,7 +85,7 @@ const WeatherCard = () => {
           </div>
           <div className="today-card-secondary">
             <div className="real-feel-temperature">
-              <p>RealFeel {realFeel}</p>
+              <p>RealFeel {realFeel} °C</p>
             </div>
             <div className="">
               <p>Humidity: {humidity}%</p>

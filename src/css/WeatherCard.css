@@ -1,24 +1,24 @@
-.container.weather-card {
-  margin-top: 50px;
-  margin-right: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 585px;
-  width: 50%;
+.weather-card-container {
   background: #fff;
-  border-radius: 30px;
+  margin-top: 50px;
+  border-radius: 20px;
+  width: 700px;
+  height: 590px;
 }
 .navigation {
   margin-top: 20px;
   text-align: end;
 }
 ul.nav-list li {
+  font-weight: 600;
+  font-size: 16px;
   display: inline-block;
   margin-right: 30px;
 }
 
 .search-weather {
+  margin-top: 30px;
+  margin-left: 30px;
   width: 200px;
   padding: 10px;
   border: 3px solid #000;
@@ -31,44 +31,32 @@ ul.nav-list li {
 }
 
 /*============today card section*/
-.title-today-card {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 40px;
-  margin-right: 350px;
-  margin-bottom: 20px;
-}
-.today__section {
-  margin-top: 50px;
+.today__section-container {
+  margin-top: 30px;
   width: 100%;
-  height: 100%;
+  height: 500px;
 }
 .today-card-container {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-start;
-  box-shadow: 2px 2px 2px 2px #000;
+  box-shadow: 2px 3px 3px 3px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  height: 200px;
-  width: 500px;
+  width: 90%;
+  height: 50%;
 }
+
+.title-today-card {
+  font-weight: 700;
+  font-size: 40px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
 .today-card-main {
   margin-top: 10px;
-  position: relative;
-}
-.today-card-main::after {
-  content: ' ';
-  background: #333333;
-  width: 4px;
-  height: 170px;
-  border-radius: 10px;
-  /* линия смещена на 10px справа от текста*/
-  left: 220px;
-  top: 10px;
-  /* включаем абсолютное позиционирование относительно блока с relative */
-  position: absolute;
 }
 
 .temperature__celcius {
